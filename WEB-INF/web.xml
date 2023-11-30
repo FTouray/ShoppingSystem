@@ -18,5 +18,15 @@
 		<servlet-name>AdminLogin</servlet-name>
 		<url-pattern>/checkLoginInfo</url-pattern>
 	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>addItem</servlet-name>
+		<servlet-class>AddItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>addItem</servlet-name>
+		<url-pattern>/addItems</url-pattern>
+	</servlet-mapping>
  
 </web-app>

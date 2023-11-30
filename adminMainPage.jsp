@@ -7,7 +7,7 @@
 <body>
     <div class="header">
         <h1>Welcome to the Admin Main Page</h1>
-        <form action="logout" method="post">
+        <form action="index.html" method="get">
             <input type="submit" value="Logout" class="logout-button">
         </form>
     </div>

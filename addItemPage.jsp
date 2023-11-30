@@ -7,7 +7,7 @@
 <body>
     <h1>Add Items</h1>
 
-    <form action="addItemsServlet" method="post" onsubmit="return validateForm()">
+    <form action="addItems" method="post" onsubmit="return validateForm()">
         <label for="itemName">Item Name:</label>
         <input type="text" id="itemName" name="itemName" required><br>
 
@@ -18,22 +18,24 @@
             <option value="gift">Gift</option>
         </select><br>
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" min="0" required><br>
+        <label for="price">Price (€):</label>
+        <input type="number" id="price" name="price" min="0" step="any" required><br>
 
         <label for="expirationDate">Expiration Date:</label>
         <input type="date" id="expirationDate" name="expirationDate" required><br>
 
-        <!-- Add other fields as needed -->
-
-        <label for="weight">Weight:</label>
-        <input type="number" id="weight" name="weight" min="0" required><br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" min="0" step="any" required><br>
 
         <label for="dimension">Dimension:</label>
         <input type="number" id="dimension" name="dimension" min="0" required><br>
 
         <input type="submit" value="Add Item">
     </form>
+
+   
+   <button id="backButton" onclick="goBack()" class="backButton">Back</button>
+
 
     <script>
         function validateForm() {
@@ -49,6 +51,11 @@
 
             return true;
         }
+
+     function goBack() {
+            window.location.href = 'adminMainPage.jsp';
+        }
+
     </script>
 </body>
 </html>
