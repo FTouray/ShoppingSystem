@@ -40,7 +40,7 @@ response.setContentType("text/html");
 PrintWriter out = response.getWriter();
 
 
-double vatRate;
+double vatRate; //Vat Rates
         switch (itemType.toLowerCase()) {
             case "luxury":
                 vatRate = 0.20; // 20%
