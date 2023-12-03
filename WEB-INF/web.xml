@@ -28,5 +28,8 @@
 		<servlet-name>addItem</servlet-name>
 		<url-pattern>/addItems</url-pattern>
 	</servlet-mapping>
+
+	
+
  
 </web-app>
