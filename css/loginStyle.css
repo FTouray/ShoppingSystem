@@ -51,4 +51,18 @@ body {
   input[type="submit"]:hover {
     background-color: #007bb5;
   }
+
+  .backButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.backButton:hover {
+    background-color: #c82333;
+}
   

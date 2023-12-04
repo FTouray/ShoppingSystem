@@ -7,7 +7,7 @@
 <body>
     <h1>Add Items</h1>
 
-    <form action="addItems" method="get" onsubmit="return validateForm()">
+    <form action="addItems" method="get" <!--onsubmit="return validateForm()"-->>
         <label for="itemName">Item Name:</label>
         <input type="text" id="itemName" name="itemName" required><br>
 
