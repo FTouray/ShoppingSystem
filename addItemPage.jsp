@@ -36,7 +36,7 @@
    
    <button id="backButton" onclick="goBack()" class="backButton">Back</button>
 
-
+    
     <script>
         function validateForm() {
             var expirationDateInput = document.getElementById("expirationDate");
@@ -57,6 +57,7 @@
         }
 
     </script>
+    
 </body>
 </html>
 

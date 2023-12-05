@@ -48,14 +48,13 @@
                 e.printStackTrace();
             }
         %>
-    </table>
+  <form action="adminMainPage.jsp">
+    <input type="submit" class="button back-button" value="Back to Admin Main Page">
+</form>
+
+<form action="viewExpiredItems.jsp" method="get">
+    <input type="submit" class="button expired-stock-button" value="View Expired Stock">
+</form>
+
 </body>
 </html>
-
-
-
-
-
-
-
-

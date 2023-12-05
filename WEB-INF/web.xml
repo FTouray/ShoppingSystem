@@ -29,6 +29,16 @@
 		<url-pattern>/addItems</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>RemoveExpiredItem</servlet-name>
+		<servlet-class>RemoveItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RemoveExpiredItem</servlet-name>
+		<url-pattern>/removeItem</url-pattern>
+	</servlet-mapping>
+
 	
 
  
