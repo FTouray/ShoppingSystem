@@ -79,7 +79,7 @@ nav {
 }
 
 .stock-item {
-    background-color: rgb(143, 171, 193);
+    background-color: rgb(184, 213, 235);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
@@ -105,5 +105,30 @@ nav {
 }
 
 .add-to-basket-btn:hover {
+    background-color: #0056b3;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+#typeFilter {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Style the Apply Filter button */
+button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
     background-color: #0056b3;
 }
