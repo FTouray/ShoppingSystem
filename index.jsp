@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
   </head>
 <body>
     <header>
-        <h1>Welcome </h1>
+        <h1>Infinite Skin</h1>
 
        
         <nav>
@@ -31,9 +33,9 @@
       <span class="icon-label">Shopping Basket</span>
     </a>
 
+    <h2 text align="center">Available Stock Items</h2>
     <div class="stock-items-container">
-      <h2>Available Stock Items</h2>
-      <ul>
+     
           <% 
           Connection connection = null;
 				try {
@@ -58,7 +60,10 @@
                       while (resultSet.next()) {
                           String name = resultSet.getString("name");
           %>
-                          <li><%= name %> </li>
+                           <div class="stock-item">
+                        <h3><%= name %></h3>
+                        <button class="add-to-basket-btn">Add to Basket</button>
+                    </div>
           <%
                       }
                   }
@@ -66,7 +71,7 @@
                   e.printStackTrace();
               }
           %>
-      </ul>
+     
   </div>
 
 </body>
