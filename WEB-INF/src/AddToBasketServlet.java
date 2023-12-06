@@ -31,12 +31,7 @@ public class AddToBasketServlet extends HttpServlet {
                 // Update the quantity and price if the item exists
                 int newQuantity = item.getQuantity() + quantity;
                 item.setQuantity(newQuantity);
-                // The total price is calculated within the getTotalPrice() method
-                // and doesn't need a separate setTotalPrice method
-                // You can use getTotalPrice() method to display the total price in JSP
-
-                // Update the shopping basket in the session
-                session.setAttribute("basket", shoppingBasket);
+                   session.setAttribute("basket", shoppingBasket);
 
                 // Redirect back to the index page
                 response.sendRedirect("index.jsp");

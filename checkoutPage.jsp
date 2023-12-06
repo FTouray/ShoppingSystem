@@ -24,6 +24,7 @@
                 for (Items item : basket) {
                     double vatRate = item.getVatRate();
                     double priceAfterTax = item.getPrice() + (item.getPrice() * vatRate);
+                    double amount = priceAfterTax * item.getQuantity();
         %>
                     <form action="calculateTotal" method="post">
                         <input type="hidden" name="itemName" value="<%= item.getName() %>">
@@ -36,8 +37,7 @@
                         <p>Price per unit: €<%= String.format("%.2f", item.getPrice()) %></p>
                         <p>VAT Rate: <%= String.format("%.2f", item.getVatRate() * 100) %>%</p>
                          <p>Price after tax: €<%= String.format("%.2f", priceAfterTax) %></p>
-
-                        <!-- Additional details for each item can be added here -->
+                          <p>Amount: €<%= String.format("%.2f", amount) %></p>
 
                     </form>
         <%
@@ -53,6 +53,7 @@
 
                     <button type="submit">Calculate Total</button>
                 </form>
+                <a href="shoppingBasket.jsp">Back to Basket</a>
         <%
             } else {
         %>

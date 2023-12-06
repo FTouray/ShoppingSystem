@@ -19,6 +19,16 @@ header {
     border-radius: 5px;
 }
 
+.checkout-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: auto; 
+}
+
+
 form:nth-child(even) {
     background-color: #f2f2f2; 
 }

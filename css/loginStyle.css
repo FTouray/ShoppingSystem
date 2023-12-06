@@ -6,6 +6,7 @@ body {
     text-align: center;
     margin: 50px;
     color: #333;
+    overflow: auto; 
   }
   
   h1 {
