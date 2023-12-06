@@ -59,5 +59,15 @@
     <url-pattern>/RemoveFromBasket</url-pattern>
 </servlet-mapping>
 
+	<servlet>
+		<servlet-name>Checkout</servlet-name>
+		<servlet-class>CheckoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Checkout</servlet-name>
+		<url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
+
 	 
 </web-app>
