@@ -39,7 +39,25 @@
 		<url-pattern>/removeItem</url-pattern>
 	</servlet-mapping>
 
-	
+	<servlet>
+		<servlet-name>AddToBasket</servlet-name>
+		<servlet-class>AddToBasketServlet</servlet-class>
+	</servlet>
 
- 
+	<servlet-mapping>
+		<servlet-name>AddToBasket</servlet-name>
+		<url-pattern>/addToBasket</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    <servlet-name>RemoveFromBasket</servlet-name>
+    <servlet-class>RemoveFromBasketServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>RemoveFromBasket</servlet-name>
+    <url-pattern>/RemoveFromBasket</url-pattern>
+</servlet-mapping>
+
+	 
 </web-app>

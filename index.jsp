@@ -16,7 +16,7 @@
         <h1>Infinite Skin</h1>
         <nav>
             <a href="AdminLogin.html" class="component-link">Stock Control</a>
-            <a href="basket.jsp" class="component-link">Shopping Basket and Calculations</a>
+            <a href="shoppingBasket.jsp" class="component-link">Shopping Basket and Calculations</a>
             <a href="changeCalculator.jsp" class="component-link">Correct Change Calculator</a>
             <a href="itemPacking.jsp" class="component-link">Item Packing</a>
         </nav>
@@ -27,7 +27,7 @@
         <span class="icon-label">Admin Login</span>
     </a>
 
-    <a href="basket.jsp" class="basket-icon-link">
+    <a href="shoppingBasket.jsp" class="basket-icon-link">
         <img src="images/shoppingBasket.png" alt="Shopping Basket">
         <span class="icon-label">Shopping Basket</span>
     </a>
@@ -88,7 +88,15 @@
                             <h3 style="color: white;"><%= name %></h3>
                             <p style="color: white;">Price before tax: <%= formattedPrice %></p>
                             <p style="color: white;">Type: <%= type %></p>
-                            <button class="add-to-basket-btn">Add to Basket</button>
+                             <!-- Form for adding to the basket -->
+                <form action="addToBasket" method="post">
+                    <input type="hidden" name="itemName" value="<%= name %>">
+                    <input type="hidden" name="itemPrice" value="<%= priceBeforeTax %>">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" value="1" min="1">
+                    
+                    <button type="submit" class="add-to-basket-btn" onclick="showFloatingMessage('Item added successfully')">Add to Basket</button>
+                </form>
                         </div>
         <%
                     }
@@ -98,6 +106,13 @@
             e.printStackTrace();
         }
         %>
+
     </div>
+    <script>
+    function showFloatingMessage(message) {
+    console.log('Function called with message:', message);
+}
+
+    </script>
 </body>
 </html>
