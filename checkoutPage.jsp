@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="css/checkoutStyle.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="css/checkoutStyle.css"> 
 </head>
 <body>
 
@@ -19,6 +19,8 @@
     <div class="checkout-container">
         <%
             ArrayList<Items> basket = (ArrayList<Items>)session.getAttribute("basket");
+
+                double t = 0;
 
             if (basket != null && !basket.isEmpty()) {
                 for (Items item : basket) {
@@ -39,12 +41,20 @@
                          <p>Price after tax: €<%= String.format("%.2f", priceAfterTax) %></p>
                           <p>Amount: €<%= String.format("%.2f", amount) %></p>
 
+                          <%t = t + amount;%>
+
                     </form>
+                
+                    
+
         <%
                 }
-        %>
-                <!-- Displayed only once for the overall basket -->
+        %>          
+
+                <label for="total">Total: €<%= String.format("%.2f",t) %> </label>
+                
                 <form action="calculateTotal" method="post">
+                    
                     <label for="totalValue">Total Value of Shopping Basket: €</label>
                     <input type="text" id="totalValue" name="totalValue" required>
 
@@ -53,6 +63,8 @@
 
                     <button type="submit">Calculate Total</button>
                 </form>
+
+                
                 <a href="shoppingBasket.jsp">Back to Basket</a>
         <%
             } else {
