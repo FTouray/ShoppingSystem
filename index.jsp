@@ -17,8 +17,8 @@
         <nav>
             <a href="AdminLogin.html" class="component-link">Stock Control</a>
             <a href="shoppingBasket.jsp" class="component-link">Shopping Basket and Calculations</a>
-            <a href="changeCalculator.jsp" class="component-link">Correct Change Calculator</a>
-            <a href="itemPacking.jsp" class="component-link">Item Packing</a>
+            <a href="change.jsp" class="component-link">Correct Change Calculator</a>
+            <a href="shippingPage.jsp" class="component-link">Item Packing</a>
         </nav>
     </header>
 
@@ -115,4 +115,3 @@
 
     </script>
 </body>
-</html>

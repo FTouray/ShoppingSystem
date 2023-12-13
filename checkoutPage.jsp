@@ -51,21 +51,15 @@
                 }
         %>          
 
-                <label for="total">Total: €<%= String.format("%.2f",t) %> </label>
+        <label for="total">Total: €<%= String.format("%.2f",t) %> </label>
                 
-                <form action="calculateTotal" method="post">
-                    
-                    <label for="totalValue">Total Value of Shopping Basket: €</label>
-                    <input type="text" id="totalValue" name="totalValue" required>
+        <form action="calculateTotal" method="post">
+          <a href="change.jsp">Calculate Total</a>
+        </form>
 
-                    <label for="paymentAmount">Amount to Pay: €</label>
-                    <input type="text" id="paymentAmount" name="paymentAmount" required>
-
-                    <button type="submit">Calculate Total</button>
-                </form>
-
-                
-                <a href="shoppingBasket.jsp">Back to Basket</a>
+     
+        
+        <a href="shoppingBasket.jsp">Back to Basket</a>
         <%
             } else {
         %>
