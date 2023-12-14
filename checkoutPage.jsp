@@ -52,9 +52,9 @@
         %>          
 
         <label for="total">Total: €<%= String.format("%.2f",t) %> </label>
-                
+              <br>  
         <form action="calculateTotal" method="post">
-          <a href="change.jsp">Calculate Total</a>
+          <a href="change.jsp">Calculate Change</a>
         </form>
 
      

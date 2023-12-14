@@ -85,8 +85,10 @@
          
 
         <button onclick="calculatePacking()">Calculate Packing</button>
-
+<br>
+<br>
         <div id="numberOfBoxesDisplay">Number of Boxes Needed: <span id="numberOfBoxes"></span></div>
+<br>
 <a href="index.jsp">Back to Homepage</a>
 
         <script>
@@ -140,6 +142,13 @@
     }
 
     document.getElementById("numberOfBoxes").textContent = numberOfBoxes;
+     var encodedSelectedItems = encodeURIComponent(JSON.stringify(selectedItems));
+
+    // Redirect to the confirmation page with relevant data
+    window.location.href = "confirmationPage.jsp?totalDimensions=" + totalDimensions +
+                           "&totalWeight=" + totalWeight +
+                           "&numberOfBoxes=" + numberOfBoxes +
+                           "&selectedItems=" + encodedSelectedItems;
 }
         </script>
 

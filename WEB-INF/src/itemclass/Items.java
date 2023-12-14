@@ -20,6 +20,73 @@ public class Items {
         this.quantity = quantity;
     }
 
+    public double getDimensions() {
+        double dimensions = 0.0;
+
+        Connection connection = null;
+				try {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			connection = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/shoppingsystem?serverTimezone=UTC", "root", "root");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+            String sql = "SELECT dimensions FROM items WHERE name = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, this.name);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        dimensions = resultSet.getDouble("dimensions");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately
+        }
+        return dimensions;
+    }
+
+    public double getWeight() {
+        double weight = 0.0;
+
+        Connection connection = null;
+				try {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			connection = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/shoppingsystem?serverTimezone=UTC", "root", "root");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        try {
+            String sql = "SELECT weight FROM items WHERE name = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, this.name);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        weight = resultSet.getDouble("weight");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately
+        }
+        return weight;
+    }
+
      public double getVatRate() {
         Connection connection = null;
 				try {
@@ -38,11 +105,9 @@ public class Items {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        try {
-            // Perform database query to retrieve VAT rate
-            // Replace the following with your actual database query
-            // Example assumes you have a table named 'items' with a column 'vat_rate'
-            String sql = "SELECT VAT FROM items WHERE name = ?";
+        try{
+
+        String sql = "SELECT VAT FROM items WHERE name = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, this.name);
             resultSet = preparedStatement.executeQuery();
@@ -55,6 +120,16 @@ public class Items {
         } 
 
         return vatRate;
+    }
+
+    public double getTotalCostAfterTax() {
+        double totalCost = getTotalPrice();
+        double vatRate = getVatRate();
+
+        // Calculate the total cost after tax
+        double totalCostAfterTax = totalCost * (1 + vatRate / 100.0);
+
+        return totalCostAfterTax;
     }
 
     // Getter methods
@@ -93,4 +168,7 @@ public class Items {
     public void setVat(double vatRate) {
         this.vatRate = vatRate;
     }
+
+
+    
 }

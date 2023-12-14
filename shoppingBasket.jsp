@@ -60,7 +60,7 @@
             %>
                     <tr>
                         <td colspan="3"></td>
-                        <td>Total: €<%= String.format("%.2f", totalPrice) %></td>
+                        <td>Total Before Tax: €<%= String.format("%.2f", totalPrice) %></td>
                         <td></td>
                     </tr>
             <%

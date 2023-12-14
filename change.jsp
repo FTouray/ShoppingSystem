@@ -39,7 +39,7 @@
 
                     <label for="paymentAmount">Amount to Pay: €</label>
                     <input type="number" id="paymentAmount" min="0" step="0.01" required><br>
-                  
+                  <br>
                     <button type="submit">Calculate Total</button>
                 </form>
 
@@ -49,6 +49,8 @@
 
                 <a href="shippingPage.jsp">Shipping details</a>
                 <!-- Back to Basket link -->
+                <br>
+                <br>
                 <a href="shoppingBasket.jsp">Back to Basket</a>
 
         <% } else { %>
